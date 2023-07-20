@@ -63,7 +63,7 @@ lr.fit(x_train,y_train)
 
 lr.score(x_test,y_test)
 
-df_test=pd.read_csv('test_dataset.csv')
+df_test=pd.read_csv('test.csv')
 df_test_cleaned=pre_process(df_test,'test')
 
 df_test_cleaned.head()
@@ -80,4 +80,4 @@ submission=pd.DataFrame({"UID":df_test['UID'],"state":y_pred})
 
 submission.head()
 
-submission.to_csv('submission.csv',index=False)
+submission.to_csv('submission_new.csv',index=False)
