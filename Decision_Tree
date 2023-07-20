@@ -1,0 +1,56 @@
+import pandas as pd
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+
+def cleaner(row):
+    if row in [np.nan, 'nan', 0.0]:
+        return row
+    else:
+        x, y = 6, -6
+        try:
+            return float(row[x:y])
+        except:
+            print(f'{row, type(row)}, exception')
+
+def pre_process(df, mode):
+    df = df.drop(['UID', 'ph_no', 'cvv', 'credit_card_number', 'job', 'email', 'url', 'country', 'emoji', 'name'], axis=1)
+    n = len(df.columns) if mode == 'test' else -1
+    for i in df.columns[:n]:
+        df[i] = df[i].apply(cleaner)
+        print(f'{i} - Success!!!')
+    df = df.fillna(df.median(numeric_only=True))
+    return df
+
+# Read and preprocess the training data
+df = pd.read_csv('/kaggle/input/testcsv/train_dataset.csv')
+df = pre_process(df, 'train')
+
+x = df.drop('state', axis=1)
+y = df['state']
+le = LabelEncoder()
+y = le.fit_transform(y)
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3)
+
+# Decision Tree Model
+dt = DecisionTreeClassifier()
+dt.fit(x_train, y_train)
+dt_score = dt.score(x_test, y_test)
+
+print("Decision Tree Model Score:", dt_score)
+
+# Read and preprocess the test data
+df_test = pd.read_csv('/kaggle/input/testcsv/test.csv')
+df_test_cleaned = pre_process(df_test, 'test')
+
+# Make predictions on the test data
+y_pred = dt.predict(df_test_cleaned)
+y_pred = le.inverse_transform(y_pred)
+
+# Create a submission DataFrame
+submission = pd.DataFrame({"UID": df_test['UID'], "state": y_pred})
+
+# Save the submission to a CSV file
+submission.to_csv('submission_1.csv', index=False)
