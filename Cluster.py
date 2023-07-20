@@ -1,3 +1,4 @@
+#Importing required libraries
 import pandas as pd
 import numpy as np
 from sklearn.cluster import KMeans
@@ -6,7 +7,8 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-​
+
+#Loading and processing data​
 def cleaner(row):
     if row in [np.nan, 'nan', 0.0]:
         return row
