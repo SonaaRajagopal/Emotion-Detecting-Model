@@ -1,4 +1,4 @@
-# Hell-Week-Submission
+#Emotion Detecting Model
 
 Objective: To harness the power of machine learning to accurately predict the emotional turmoil status of individuals. 
 
