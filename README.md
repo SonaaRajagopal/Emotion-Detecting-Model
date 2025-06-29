@@ -19,6 +19,18 @@ The project implements multiple supervised learning techniques to classify emoti
 
 Each model was trained, validated, and evaluated using performance metrics to select the most suitable one for final deployment.
 
+## 🛠️ Tech Stack
+
+| Technology     | Description                        |
+|----------------|------------------------------------|
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | Core programming language |
+| ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) | Data manipulation         |
+| ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white) | Numerical operations      |
+| ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white) | Machine learning models   |
+| ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white) | Visualization (optional)  |
+| ![XGBoost](https://img.shields.io/badge/XGBoost-EC6608?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB...shortened...) | Gradient boosting         |
+
+
 
 
 ## 🧬 Features Considered
