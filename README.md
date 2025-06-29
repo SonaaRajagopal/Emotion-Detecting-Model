@@ -1,4 +1,12 @@
-# 🧠 Emotion Detecting Model
+# 🧠 Emotion Detecting Model: Predicting Emotional Turmoil with Machine Learning
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-F7931E.svg)
+![XGBoost](https://img.shields.io/badge/Boosting-XGBoost-EC6608.svg)
+![Platform](https://img.shields.io/badge/Platform-Jupyter%20Notebook-orange.svg)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 
 ## 🌟 Overview
 
